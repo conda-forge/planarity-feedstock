@@ -1,4 +1,4 @@
-{% set version = "3.0.0.5" %}
+{% set version = "3.0.1.0" %}
 {% set name = "planarity" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/graph-algorithms/edge-addition-planarity-suite/archive/Version_{{ version }}.tar.gz
-  sha256: a019eedf67087bba1996c8b9ad47a6f1cda166c2d8976f13bfcff5c0d23e5578
+  sha256: f5489e64ae8d83a4ffb29a4cdfdb2dd7eb4ba33acf23fa54cba08058c8ee085d
   patches:
     # variables declared in headers should be marked extern
     # https://github.com/graph-algorithms/edge-addition-planarity-suite/pull/3
@@ -17,7 +17,7 @@ source:
     - exclude-unistd.patch  # [win]
 
 build:
-  number: 1002
+  number: 0
 
 requirements:
   build:
