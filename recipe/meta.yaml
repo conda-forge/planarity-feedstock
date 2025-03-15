@@ -1,4 +1,4 @@
-{% set version = "3.0.2.0" %}
+{% set version = "4.0.0.0" %}
 {% set name = "planarity" %}
 
 package:
@@ -8,8 +8,8 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/graph-algorithms/edge-addition-planarity-suite/archive/Version_{{ version }}.tar.gz
-  sha256: 40f4ee7bbd5d8535460c60fc0fc1f806b10909a1419618fd9235746a420a04c6
-  patches:  # [win]
+  sha256: 1efcb06eaec42830de5d35ff664f7580f16dff131dbfc24f627460547b3401d5
+  patches:   # [win]
     - 0001-Adapt-for-Windows-build.patch  # [win]
 
 build:
@@ -23,6 +23,7 @@ requirements:
     - automake     # [unix]
     - autoconf     # [unix]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - cmake        # [win]
     - make         # [unix]
   host:
