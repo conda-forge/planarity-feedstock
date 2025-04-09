@@ -9,12 +9,7 @@ else
     export CFLAGS="-g -O2 -fPIC $CFLAGS"
 fi
 
-aclocal &&
-autoconf &&
-libtoolize --copy &&
-automake --add-missing --copy &&
-rm -rf autom4te.cache
-
+autoreconf -fi
 chmod +x configure
 ./configure --prefix="$PREFIX"
 
