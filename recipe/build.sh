@@ -1,21 +1,12 @@
 #!/bin/bash
+set -ex
 
-export CFLAGS="-g -O2 -fPIC $CFLAGS"
+./configure --prefix="$PREFIX" || (cat config.log; false)
 
-if [[ "$(uname)" == MINGW* ]]; then
-    CC=cl.exe
-    LD=link.exe
-else
-    export CFLAGS="-g -O2 -fPIC $CFLAGS"
-fi
-
-chmod +x autogen.sh
-./autogen.sh
-chmod +x configure
-./configure --prefix="$PREFIX"
+[[ "$target_platform" == "win-64" ]] && patch_libtool
 
 make -j${CPU_COUNT}
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-make check
+  make check
 fi
 make install
