@@ -1,0 +1,39 @@
+From 5af3235cbb56c4b0561fccf75b2fc1d5df0d7055 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Sun, 14 Sep 2025 18:11:17 +0300
+Subject: [PATCH] Fix line ending in test script
+
+---
+ test-samples.sh.in | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/test-samples.sh.in b/test-samples.sh.in
+index 4729590..1c899d2 100755
+--- a/test-samples.sh.in
++++ b/test-samples.sh.in
+@@ -1,11 +1,11 @@
+-#!/bin/sh
+-#
+-# Run "planarity -test" using planarity from the build tree and the
+-# samples from the source tree. 
+-#
+-
+-samplesdir="@abs_top_srcdir@/c/samples"
+-planaritydir="@abs_top_builddir@"
+-
+-cd "${planaritydir}"                || exit 1
+-./planarity -test "${samplesdir}"   || exit 2
++#!/bin/sh
++#
++# Run "planarity -test" using planarity from the build tree and the
++# samples from the source tree. 
++#
++
++samplesdir="@abs_top_srcdir@/c/samples"
++planaritydir="@abs_top_builddir@"
++
++cd "${planaritydir}"                || exit 1
++./planarity -test "${samplesdir}"   || exit 2
+-- 
+2.51.0
+
