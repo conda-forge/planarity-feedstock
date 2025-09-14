@@ -7,8 +7,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/graph-algorithms/edge-addition-planarity-suite/archive/Version_{{ version }}.tar.gz
-  sha256: 1efcb06eaec42830de5d35ff664f7580f16dff131dbfc24f627460547b3401d5
+  url: https://github.com/graph-algorithms/edge-addition-planarity-suite/releases/download/Version_{{ version }}/planarity-{{ version }}.tar.gz
+  sha256: df3c86c32fd37b801079aea7de67675efdef12ada557cbcaae821e81b8db438d
   patches:   # [win]
     - 0001-Adapt-for-Windows-build.patch  # [win]
 
