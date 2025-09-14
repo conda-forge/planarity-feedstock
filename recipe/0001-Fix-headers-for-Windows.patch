@@ -1,0 +1,31 @@
+From 92472b33aee8b47d4133698c38bbc206d98b5ae6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Sun, 14 Sep 2025 19:08:54 +0300
+Subject: [PATCH] Fix headers for Windows
+
+---
+ c/planarityApp/planarityCommandLine.c | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/c/planarityApp/planarityCommandLine.c b/c/planarityApp/planarityCommandLine.c
+index fcd5b05..b7fb771 100644
+--- a/c/planarityApp/planarityCommandLine.c
++++ b/c/planarityApp/planarityCommandLine.c
+@@ -6,14 +6,9 @@ See the LICENSE.TXT file for licensing information.
+ 
+ #include "planarity.h"
+ 
+-#if defined(_MSC_VER) && !defined(__llvm__) && !defined(__INTEL_COMPILER)
+-// MSVC under Windows doesn't have unistd.h, but does define functions like getcwd and chdir
+ #include <direct.h>
+ #define getcwd _getcwd
+ #define chdir _chdir
+-#else
+-#include <unistd.h>
+-#endif
+ 
+ int runQuickRegressionTests(int argc, char *argv[]);
+ int callRandomGraphs(int argc, char *argv[]);
+-- 
+2.51.0
+

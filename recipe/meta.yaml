@@ -11,6 +11,7 @@ source:
   sha256: df3c86c32fd37b801079aea7de67675efdef12ada557cbcaae821e81b8db438d
   patches:
     - 0001-Fix-line-ending-in-test-script.patch
+    - 0001-Fix-headers-for-Windows.patch  # [win]
 
 build:
   number: 0
