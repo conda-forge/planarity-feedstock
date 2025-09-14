@@ -22,10 +22,10 @@ requirements:
     - libtool      # [unix]
     - automake     # [unix]
     - autoconf     # [unix]
+    - make         # [unix]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
-    - cmake        # [win]
-    - make         # [unix]
+    - autotools_clang_conda  # [win]
   host:
 
 test:
