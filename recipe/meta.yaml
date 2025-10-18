@@ -1,4 +1,4 @@
-{% set version = "4.0.0.0" %}
+{% set version = "4.0.1.0" %}
 {% set name = "planarity" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/graph-algorithms/edge-addition-planarity-suite/releases/download/Version_{{ version }}/planarity-{{ version }}.tar.gz
-  sha256: df3c86c32fd37b801079aea7de67675efdef12ada557cbcaae821e81b8db438d
+  sha256: b80de8b5e6cbbe00684c614cf7d040bb10f7c0ad6f850fd2d10c2e533c6026f5
   patches:
     - 0001-Fix-line-ending-in-test-script.patch
     - 0001-Fix-headers-for-Windows.patch  # [win]
